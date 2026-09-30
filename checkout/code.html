@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookStop - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#cde5ff",
+                        "on-primary-container": "#5c2800",
+                        "surface-container-high": "#fbe3d7",
+                        "on-secondary-container": "#5f6161",
+                        "text-primary": "#111111",
+                        "accent-soft": "#FFA94D",
+                        "background": "#fff8f5",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary": "#994700",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e0c0af",
+                        "tertiary": "#006399",
+                        "on-surface": "#251912",
+                        "tertiary-container": "#00a8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#753400",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-tertiary-container": "#003a5c",
+                        "primary-fixed-dim": "#ffb68b",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#f6ded2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#edd5ca",
+                        "on-background": "#251912",
+                        "primary-fixed": "#ffdbc8",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "on-primary-fixed": "#321200",
+                        "inverse-primary": "#ffb68b",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ffede5",
+                        "secondary-container": "#dcdddd",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-surface-variant": "#584235",
+                        "surface-container": "#ffeadf",
+                        "inverse-surface": "#3b2d26",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "secondary": "#5d5f5f",
+                        "surface-tint": "#994700",
+                        "text-secondary": "#666666",
+                        "surface-variant": "#f6ded2",
+                        "surface-container-low": "#fff1ea",
+                        "outline": "#8c7263",
+                        "primary-container": "#ff7a00",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-fixed-dim": "#95ccff",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "headline-xl": ["Manrope", "sans-serif"],
+                        "headline-lg-mobile": ["Manrope", "sans-serif"],
+                        "label-md": ["Manrope", "sans-serif"],
+                        "label-sm": ["Manrope", "sans-serif"],
+                        "headline-lg": ["Manrope", "sans-serif"],
+                        "headline-md": ["Manrope", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar (Transactional - Hidden Navigation Elements) -->
+<header class="w-full top-0 sticky z-50 bg-background flex justify-between items-center px-margin-mobile py-md">
+<button aria-label="Go back" class="text-on-surface-variant hover:opacity-80 transition-opacity duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Checkout</div>
+<div class="w-6 h-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left Column: Checkout Steps -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Step 1: Shipping Address -->
+<section class="bg-surface-container-lowest rounded-lg p-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant relative overflow-hidden group">
+<div class="flex items-center gap-md mb-md">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md">1</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Shipping Address</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-lg">
+<div class="border-2 border-primary rounded-DEFAULT p-md bg-surface cursor-pointer relative">
+<span class="absolute top-md right-md material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+<div class="font-label-md text-label-md text-on-surface mb-sm">Home</div>
+<div class="font-body-md text-body-md text-text-secondary">
+                                Jane Doe<br/>
+                                123 Paper Street, Apt 4B<br/>
+                                New York, NY 10001<br/>
+                                United States
+                            </div>
+</div>
+<div class="border border-outline-variant rounded-DEFAULT p-md bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer flex flex-col items-center justify-center min-h-[140px] text-text-secondary">
+<span class="material-symbols-outlined mb-sm">add</span>
+<span class="font-label-md text-label-md">Add New Address</span>
+</div>
+</div>
+</section>
+<!-- Step 2: Delivery Options -->
+<section class="bg-surface-container-lowest rounded-lg p-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant relative overflow-hidden group">
+<div class="flex items-center gap-md mb-md">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-label-md">2</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Delivery Method</h2>
+</div>
+<div class="flex flex-col gap-sm mt-lg">
+<label class="flex items-center p-md border-2 border-primary rounded-DEFAULT bg-surface cursor-pointer">
+<input checked="" class="form-radio text-primary focus:ring-primary w-5 h-5" name="delivery" type="radio"/>
+<div class="ml-md flex-1">
+<div class="font-label-md text-label-md text-on-surface">Standard Delivery</div>
+<div class="font-body-md text-body-md text-text-secondary text-sm">3-5 Business Days</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface">Free</div>
+</label>
+<label class="flex items-center p-md border border-outline-variant rounded-DEFAULT hover:bg-surface-container-low cursor-pointer">
+<input class="form-radio text-primary focus:ring-primary w-5 h-5" name="delivery" type="radio"/>
+<div class="ml-md flex-1">
+<div class="font-label-md text-label-md text-on-surface">Express Delivery</div>
+<div class="font-body-md text-body-md text-text-secondary text-sm">1-2 Business Days</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface">$12.00</div>
+</label>
+</div>
+</section>
+<!-- Step 3: Payment Method -->
+<section class="bg-surface-container-lowest rounded-lg p-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant relative overflow-hidden group">
+<div class="flex items-center gap-md mb-md">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-label-md">3</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Payment</h2>
+</div>
+<div class="grid grid-cols-2 gap-sm mt-lg mb-lg">
+<button class="flex items-center justify-center gap-sm p-sm border border-outline-variant rounded-DEFAULT hover:bg-surface-container-low bg-black text-white py-3">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Apple Pay</span>
+</button>
+<button class="flex items-center justify-center gap-sm p-sm border-2 border-primary rounded-DEFAULT bg-surface text-primary py-3">
+<span class="material-symbols-outlined">credit_card</span>
+<span class="font-label-md text-label-md">Credit Card</span>
+</button>
+</div>
+<div class="flex flex-col gap-md">
+<div class="relative">
+<input class="w-full px-md py-sm bg-surface-container-low border border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md pt-6 pb-2 peer" id="card_number" placeholder=" " type="text"/>
+<label class="absolute left-md top-4 text-text-secondary font-body-md text-body-md transition-all peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-3 peer-[:not(:placeholder-shown)]:scale-75 origin-left" for="card_number">Card Number</label>
+<span class="absolute right-md top-4 material-symbols-outlined text-outline-variant">credit_card</span>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="relative">
+<input class="w-full px-md py-sm bg-surface-container-low border border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md pt-6 pb-2 peer" id="expiry" placeholder=" " type="text"/>
+<label class="absolute left-md top-4 text-text-secondary font-body-md text-body-md transition-all peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-3 peer-[:not(:placeholder-shown)]:scale-75 origin-left" for="expiry">MM/YY</label>
+</div>
+<div class="relative">
+<input class="w-full px-md py-sm bg-surface-container-low border border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md pt-6 pb-2 peer" id="cvc" placeholder=" " type="text"/>
+<label class="absolute left-md top-4 text-text-secondary font-body-md text-body-md transition-all peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-3 peer-[:not(:placeholder-shown)]:scale-75 origin-left" for="cvc">CVC</label>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-lowest rounded-lg p-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant sticky top-[100px]">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Order Summary</h3>
+<!-- Items -->
+<div class="flex flex-col gap-md mb-lg max-h-[300px] overflow-y-auto pr-2">
+<div class="flex gap-md">
+<div class="w-16 h-24 bg-surface-container-high rounded-sm overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A pristine, hardcover photography book lying flat on a minimalist wooden table. Soft, natural sunlight streams across the cover, highlighting its matte texture. The aesthetic is warm minimalism, with light beige and muted orange tones. High quality, professional photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9vR41HuIm8tseXrtAHZMdfTn4BlUak6yL1kg651sVvouARCK41NIQHELghN-w0kjlt6gU5dNbuKVIzJmqMowqT_jGZYSINTz9lFXcCZgHK4TyRxKzTtvb-9YE-jvHvMr8NgVCOn9uJv6TSdg5nUHKBKTNZc0LWCMtPkUuJdYFPXLf23m7LoOD4F-w3Glk2AlPiXSpJoDfKsgHYx29IqVJb2k8FTTU0C1dY8-s6-wfxGlGn8mRyA3P"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="font-label-md text-label-md text-on-surface line-clamp-2">The Architecture of Light</div>
+<div class="font-body-md text-sm text-text-secondary mt-xs">Hardcover</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface">$45.00</div>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-16 h-24 bg-surface-container-high rounded-sm overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A beautifully designed modern cookbook with a vibrant orange spine, resting on a clean white marble counter. A subtle drop shadow gives it depth. The lighting is bright and airy, reflecting a premium digital shopping experience. Warm minimal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvx_j57qfB4EG8y1rDbvUpd44BhJ3quYq6IC6L9mR4wYAJCUITBSdIuKaCBSeChHyMdNtxZz_qyhkNmn99M36GRnsLInQzK9wrHg4Eh4XZXHmxi4vm8Hg8asaGYIUSyVL_igCZ48szy1LxJ7mU-eY-OC-O1P8pYjUHyNqdjtF8C0SqaJvxtAhBC7FcPyChxXBNWYu56JEZaNTpbUtEexbKVIZSn4wykHdJM1ZKtZLKVAzZ0Xx_ABKX"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="font-label-md text-label-md text-on-surface line-clamp-2">Minimalist Kitchen</div>
+<div class="font-body-md text-sm text-text-secondary mt-xs">Paperback</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface">$28.50</div>
+</div>
+</div>
+</div>
+<!-- Totals -->
+<div class="border-t border-surface-variant pt-md flex flex-col gap-sm">
+<div class="flex justify-between font-body-md text-body-md text-text-secondary">
+<span>Subtotal</span>
+<span>$73.50</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-text-secondary">
+<span>Shipping</span>
+<span>Free</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-text-secondary">
+<span>Tax</span>
+<span>$6.25</span>
+</div>
+<div class="flex justify-between font-headline-md text-lg text-on-surface mt-sm pt-sm border-t border-surface-variant">
+<span>Total</span>
+<span>$79.75</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t border-surface-variant p-md shadow-[0_-8px_24px_rgba(0,0,0,0.05)] flex justify-center pb-8">
+<button class="w-full max-w-[400px] bg-primary-container text-white font-label-md text-label-md rounded-full py-4 flex items-center justify-center gap-sm hover:opacity-90 transition-opacity">
+            Confirm Order - $79.75
+            <span class="material-symbols-outlined text-sm">lock</span>
+</button>
+</div>
+</body></html>

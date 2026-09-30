@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile - BookStop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#cde5ff",
+                        "on-primary-container": "#5c2800",
+                        "surface-container-high": "#fbe3d7",
+                        "on-secondary-container": "#5f6161",
+                        "text-primary": "#111111",
+                        "accent-soft": "#FFA94D",
+                        "background": "#fff8f5",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary": "#994700",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e0c0af",
+                        "tertiary": "#006399",
+                        "on-surface": "#251912",
+                        "tertiary-container": "#00a8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#753400",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-tertiary-container": "#003a5c",
+                        "primary-fixed-dim": "#ffb68b",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#f6ded2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#edd5ca",
+                        "on-background": "#251912",
+                        "primary-fixed": "#ffdbc8",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "on-primary-fixed": "#321200",
+                        "inverse-primary": "#ffb68b",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ffede5",
+                        "secondary-container": "#dcdddd",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-surface-variant": "#584235",
+                        "surface-container": "#ffeadf",
+                        "inverse-surface": "#3b2d26",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "secondary": "#5d5f5f",
+                        "surface-tint": "#994700",
+                        "text-secondary": "#666666",
+                        "surface-variant": "#f6ded2",
+                        "surface-container-low": "#fff1ea",
+                        "outline": "#8c7263",
+                        "primary-container": "#ff7a00",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-fixed-dim": "#95ccff",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-xl": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-[80px]">
+<!-- Header -->
+<header class="w-full top-0 sticky z-40 bg-background dark:bg-background flex justify-between items-center px-margin-mobile py-md transition-opacity duration-200">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80" data-icon="menu">menu</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">BookStop</h1>
+</div>
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden cursor-pointer hover:opacity-80 border-2 border-transparent">
+<img class="w-full h-full object-cover" data-alt="A close up, stylized portrait of a person reading a book in a sunlit library. Warm natural lighting, light aesthetic, minimal distraction. Bright orange highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF6nYDuWxQfsge9ZQBzf5N9729pZwYC55gGDmCVbWIwmNyNqpltWgZ8kj-qtIVcrFN9Pb2jGfwI4Yu-hWZ5sWY_bEvjyklFQZu0dcYedyMWI3doubcJmesujXRrjOVVipleLmmJGx6K_apBAZH1dJ0HwAiJ0pF_vrCq6AJirpc8Ns3YpHlz85zg8lCUCYHnZN0KFk0sd1U3Nk_WNlntXb_KdmKEfsKzSzlYLhNc80ukmpa765NRUCS"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-[1200px] mx-auto px-margin-mobile pt-lg pb-xl flex flex-col md:flex-row gap-lg">
+<!-- Profile Summary Card (Bento Style) -->
+<section class="w-full md:w-1/3 bg-surface rounded-DEFAULT shadow-[0_8px_24px_rgba(0,0,0,0.06)] p-lg flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-br from-primary-fixed to-surface-container-high opacity-50 z-0 rounded-t-DEFAULT"></div>
+<div class="relative z-10 w-24 h-24 rounded-full bg-surface-variant p-1 shadow-md mb-4 border-2 border-surface">
+<img class="w-full h-full rounded-full object-cover" data-alt="A bright, cheerful portrait photo of a person holding a coffee cup, standing in front of a modern minimalist bookshelf. Warm sunny atmosphere, high quality photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR8-98K_pXlNceGWIeRKWlYoST1rboSGyXE7yINzAgzJRrQYFNfJSweOFKsGxnPapdw6yEx9uV0RpN675p9IKDVIoTkMHBoq03amyGwQTiHjsKtAfhahncahWp4CnAym3K5Wrscx_WqiN_RG0zh5ivl132QROc7RjM0NmSfE887IyH-7QR10XRdhy3owykalLeZMEk9qQi-B1BrBAJ2utDWffCJFJ5Z6yllsfZRSz5CJDCW-qYwShv"/>
+<button class="absolute bottom-0 right-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+</button>
+</div>
+<h2 class="relative z-10 font-headline-md text-headline-md text-on-surface mb-1">Alex Reader</h2>
+<p class="relative z-10 font-body-md text-body-md text-text-secondary mb-6">alex.reader@example.com</p>
+<div class="relative z-10 w-full flex justify-around bg-surface-container-low rounded-lg p-4 border border-outline-variant/30">
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary">12</span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Reviews</span>
+</div>
+<div class="w-px h-full bg-outline-variant/30 mx-2"></div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary">45</span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Wishlist</span>
+</div>
+<div class="w-px h-full bg-outline-variant/30 mx-2"></div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary">8</span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Orders</span>
+</div>
+</div>
+</section>
+<!-- Options List -->
+<section class="w-full md:w-2/3 flex flex-col gap-sm">
+<h3 class="font-label-md text-label-md text-text-secondary uppercase tracking-wider mb-2 ml-2 mt-4 md:mt-0">Account Settings</h3>
+<div class="bg-surface rounded-DEFAULT shadow-[0_4px_12px_rgba(0,0,0,0.03)] border border-outline-variant/20 overflow-hidden">
+<!-- Option: Edit Profile -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group border-b border-outline-variant/20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim/30 flex items-center justify-center group-hover:bg-primary-fixed-dim/50 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Edit Profile</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Option: Saved Addresses -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group border-b border-outline-variant/20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim/30 flex items-center justify-center group-hover:bg-tertiary-fixed-dim/50 transition-colors">
+<span class="material-symbols-outlined text-tertiary" data-icon="location_on">location_on</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Saved Addresses</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Option: Payment Methods -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-accent-soft/20 flex items-center justify-center group-hover:bg-accent-soft/40 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="credit_card">credit_card</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Payment Methods</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<h3 class="font-label-md text-label-md text-text-secondary uppercase tracking-wider mb-2 ml-2 mt-6">Preferences &amp; Support</h3>
+<div class="bg-surface rounded-DEFAULT shadow-[0_4px_12px_rgba(0,0,0,0.03)] border border-outline-variant/20 overflow-hidden">
+<!-- Option: Wishlist -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group border-b border-outline-variant/20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center group-hover:bg-error-container/80 transition-colors">
+<span class="material-symbols-outlined text-error" data-icon="favorite">favorite</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Wishlist</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Option: Notifications -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group border-b border-outline-variant/20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Notifications</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Option: Help -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group border-b border-outline-variant/20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="help">help</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Help &amp; Support</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Option: Logout -->
+<button class="w-full flex items-center justify-between p-4 hover:bg-error-container/30 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center group-hover:bg-error-container/50 transition-colors">
+<span class="material-symbols-outlined text-error" data-icon="logout">logout</span>
+</div>
+<span class="font-body-md text-body-md text-error font-medium">Logout</span>
+</div>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only via visibility classes if strict responsive was needed, but instructions say use it if relevant. Hiding on md as per instructions.) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-8 bg-surface dark:bg-surface-dim shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-t-lg md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary-container group">
+<span class="material-symbols-outlined text-[24px] mb-1 group-hover:scale-110 transition-transform" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary-container group">
+<span class="material-symbols-outlined text-[24px] mb-1 group-hover:scale-110 transition-transform" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary-container group">
+<span class="material-symbols-outlined text-[24px] mb-1 group-hover:scale-110 transition-transform" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm">Wishlist</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary-container group">
+<span class="material-symbols-outlined text-[24px] mb-1 group-hover:scale-110 transition-transform" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">Cart</span>
+</button>
+<!-- Active Tab -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-container font-bold scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="person" data-weight="fill">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

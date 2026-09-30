@@ -1,0 +1,260 @@
+export const BOOKS = [
+  {
+    id: "midnight-library",
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    price: 14.99,
+    rating: 4.8,
+    reviewsCount: "2.4k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtA-KASVlJJTUsu9TbNo1qlXWPZmVBHUNWkdq8RVisf6JcVetQ3x_mFVK4FAXNhfWqS3RDmnsfPIAhY6ri9_qs49riDUYrZl29nXO1y3RUVweRTcNNi2vJAuUfnknrxmjhW7pkh5O4XH6GkTa2IXmRszjzM62bV5xoH8KI964mY7Nd5AxRtm9Y-Zpw4XkwpS9e9S-tQJv0bcLEMU_w-ZIUnfwZpuddWAa40lL4k5EzSGLWpq--PnhM",
+    genre: "Fiction",
+    tags: ["Fiction", "Fantasy", "Contemporary"],
+    synopsis: "Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived. To see how things would be if you had made other choices... Would you have done anything different, if you had the chance to undo your regrets?",
+    isFeatured: true,
+    isTrending: true
+  },
+  {
+    id: "silent-echo",
+    title: "The Silent Echo",
+    author: "E.R. Stone",
+    price: 18.99,
+    rating: 4.8,
+    reviewsCount: "1.2k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuDLo-Pdpa9v48tEX33_eoxwYty0XzGhOt0ED2pHGIgISJx8Vs0X243KeI4N6cftCPWaHuP_pKWhcYC9RNuZNgV1MCMfpu5Rgor2xqNk9Uc2XODPQXz0iFrPIX-EPIkBHwFAKUBoQkW0oWKPkUmys8XkxS5WnVL3YOza2vcr4VNbaY6WR88GK2CYp6jd8mtX0ByXAWiTHS0Y5WguWXDK5U7YP3QIDEvmN3n5udYlVjylHibqxfjmgmmD",
+    genre: "Mystery",
+    tags: ["Mystery", "Thriller", "Bestseller"],
+    synopsis: "A gripping psychological thriller set in a remote seaside town where secrets linger in the fog. An enigmatic investigator uncovers whispers from decades past that threaten to upend everything.",
+    isTrending: true
+  },
+  {
+    id: "dune-walker",
+    title: "Dune Walker",
+    author: "T.J. Howell",
+    price: 22.50,
+    rating: 4.5,
+    reviewsCount: "980 reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz-1T29F77RhrwZ8j8BJRLogmWGK3dYCZmyKYxRYjBYHD2OnL5HUhbzW5aCx2IjKCGrUVlodWlbylq2xyBHt1iwXJGoqiBZ-8HmBoNOtiiIkNfxOfVEU3yfhxbCQiGQWpKUm4Alt0Cz0UhsObyhRc7kUqGIJZ3QtMV9oPIh48rlTg-OrX2BVW5UXrcpSQT_4C87Ekj0hMOJw5MMMV9yErnTRXcMN4t3U95lPObTCSKWRJhmLSN7rwp",
+    genre: "Fantasy",
+    tags: ["Fantasy", "Sci-Fi", "Adventure"],
+    synopsis: "Across an endless expanse of shifting sands, a solitary wanderer seeks the remnants of an ancient technology capable of restoring life to a parched world.",
+    isTrending: true
+  },
+  {
+    id: "morning-light",
+    title: "Morning Light",
+    author: "Sarah Jenkins",
+    price: 16.00,
+    rating: 4.9,
+    reviewsCount: "3.1k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuDA07YnL8q8_-NcPSjC2FLR5uS5bDOKlz_Zm_OqRDl4uHwJ3WpUl4j5FF0TM_VpJtxrUWZ2SiXeCRIZ45dEc1bJdXiFsrztdJTARIE-KmeG8yRIrnz-NUf3D6Ocej8AJZCwM_HD3BmgbW5p5IevcbRmxprNeHdY29cs_O7r6e5htAKCvOIDQmPlBto9ieKoCAevTwEFa1lmclYGZ5F11w1DyiFoJzcFAbncB8bxjdjKV1EyVPlr8YYH",
+    genre: "Romance",
+    tags: ["Romance", "Contemporary", "Heartwarming"],
+    synopsis: "A touching and heartwarming story of second chances, quiet mornings in the French countryside, and learning how to love again after a deep loss.",
+    isTrending: true
+  },
+  {
+    id: "midnight-city",
+    title: "Midnight City",
+    author: "David K.",
+    price: 19.99,
+    rating: 4.2,
+    reviewsCount: "640 reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuCFY-z8vdBpIbomZZJVXeTSu8Svn-bLNac_AfFJ2e68H9FlqLFxAqydQmKNslk3RY21mmHWDsEIyrvQBROkeXqYTWcX2SwjrRhlX4l3ak2MAWYe4EiKfR-vea7Tg6nzdEhZYblHutg8AVUQTxL6glOSDUbkWr5pHZGPHr5HMOQ8QCFQh1da6okgvdkyWIRVSQKoglBneHNhO9h2zVcUo5v_jCo-vt-gaOal72h5dzIx1y15BgGND_Zy",
+    genre: "Mystery",
+    tags: ["Mystery", "Noir", "Urban"],
+    synopsis: "Under neon-washed rain slicked boulevards, a disgraced reporter chases down a conspiracy that connects city hall to subterranean jazz clubs.",
+    isTrending: true
+  },
+  {
+    id: "focus",
+    title: "Focus",
+    author: "Dr. A. Miller",
+    price: 14.99,
+    rating: 4.6,
+    reviewsCount: "1.8k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuDDYqpqHZwmNJSCvfppz12Jc1Ce-qcNGArToT-AxI82Fg2wD8DZWYuQpCS5ZXVwScGQQvsJw9cAprB9L_v3TgKST5gN2IUfPet7IuogRbVHYYYoCvZHerGV-qfthUGoYcQfSb44skWM4XAvHV3VWMeWI1ol6_ouuiMIx7IirPsTfbjB7Cyxbt54AvTng_30TFm6k2bnldvku2-NijtdSCwZA3_hefsQi3lJgfMiA9ukBXyGjs4OiUp_",
+    genre: "Self Help",
+    tags: ["Self Help", "Productivity", "Mindfulness"],
+    synopsis: "Unlock the hidden potential of deep work and cognitive clarity with evidence-based mental frameworks designed for an age of relentless distraction.",
+    isRecommended: true
+  },
+  {
+    id: "coffee-shop-diaries",
+    title: "Coffee Shop Diaries",
+    author: "L. B. Cole",
+    price: 12.50,
+    rating: 4.4,
+    reviewsCount: "890 reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuAK3jy97OhSMvxr6DntlZG8yTcPgU1vQ2d3XHQGgwjTfX9ZWO7F-IO5oeznOE-eGWu7DQcWL9KyblmITREssjV1ZnvKMB1GdA3bea92-3zvBktkB0MO2lne4H3KU5Ej8zsinb87_4rx9yliqcN3XRLfuVPT3Mu7jo-U8pY2AE_KhhrYYV8c_s7ZLso6Qsv27Szlg2E1gEIQ7367kTU5Reng_cgUFLk-M3D20C9R1ETai7mpEVg8bdGU",
+    genre: "Fiction",
+    tags: ["Fiction", "Cozy", "Slice of Life"],
+    synopsis: "A cozy series of interwoven tales centered around a small neighborhood cafe where strangers cross paths and find unexpected comfort.",
+    isRecommended: true
+  },
+  {
+    id: "art-of-stillness",
+    title: "Art of Stillness",
+    author: "Maya Lin",
+    price: 24.00,
+    rating: 4.9,
+    reviewsCount: "2.9k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuAKk77gbiYv-Xzgi7SU0NC4dRL22mRw-zPi-dnNDQyj4ciwqMxe3p7JscRJh3HQ0TLmGgFD3W-pH5yrk_cy7g_5zIpR76v3JlQCHrg21DBVnW44uhliWvuwlxHBnGW3ANSUD42vcl7c-1jp8_Q_mRWxmzf3c9YgO46ZjBZWGAh-UELk_CZFV89gm-VeDdWxVW0gx2jAgmMpqUHmIZ6rurC62ONs5sVFGXVAQgqPj6p_f74tGGsYJJKq",
+    genre: "Self Help",
+    tags: ["Self Help", "Philosophy", "Design"],
+    synopsis: "A meditative reflection on silence, intentional living, and finding peace amid modern chaos.",
+    isRecommended: true
+  },
+  {
+    id: "the-hidden-botanist",
+    title: "The Hidden Botanist",
+    author: "Arthur V.",
+    price: 21.99,
+    rating: 4.7,
+    reviewsCount: "1.5k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuCWlJPBLSq9X-OO4jVY4hBF2k5WSwOPbxMy_srtUc2_0OPw9YYp2H9cINWQoKtet5c1NxXlDaxTVUEbwp2JEhKcpvCrRD5vN-zDwC-8TOQpBjQPet2-rtI3wW2tMN5tNbVvtGAO6cekK3Qwm7Gacx-L0BW_i7EnrG-Jv5MYkwnMjbRMXLaTp8L3kOctUVREEZhUHX_XNfoRzWeMIjKediQO9iGrrYC6G8HtRxzMdY2bOU4nTvrtoAzs",
+    genre: "History",
+    tags: ["History", "Botany", "Classic"],
+    synopsis: "In 19th-century Victorian England, an elusive botanical scholar documents clandestine herbs capable of cure and poison alike.",
+    isRecommended: true
+  },
+  {
+    id: "art-of-simplicity",
+    title: "The Art of Simplicity",
+    author: "Jane Austen",
+    price: 24.99,
+    rating: 4.8,
+    reviewsCount: "2.1k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuDwt6nv2DDe9GHm2_p6cjOjOO1rIKtAo4GRwymhmySoxg5C3T5bcCDM0thY9kotoG0JDgK-snn6gSr2EWaBLbbsqaOJhcoJkUmw0chsOJgG-H24aaLO81i0h-roCOKD1lQMEmRFUavFw2lcj9tOqaxxEqbH7DZ5hV9nP0pblzSh6E8QTGNfY0v5FF6UF-8vQ_5Izwq5WpIdUtMmQqrgW3SLDetgKbDserNgVdLXS4pzHDISiyGnlO7G",
+    genre: "Fiction",
+    tags: ["Philosophy", "Classic", "Lifestyle"],
+    synopsis: "An elegant discourse exploring the freedom of living with less, focusing attention on what brings true fulfillment and harmony.",
+    inCartDefault: true,
+    defaultQty: 1
+  },
+  {
+    id: "urban-spaces",
+    title: "Urban Spaces",
+    author: "David Miller",
+    price: 32.50,
+    rating: 4.7,
+    reviewsCount: "750 reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxKZ0dgKKNVtgZe7hGt9tz1bZDrIvstDDphyZxDXWt7jnkSg1GlLYbGIQ51P0qrbi-OIsK0uvT0V-1-MEsBwqkxbZVCUmE7VI12vB01-NYbVAFnyXJqGq_6s7oXa_zS459KToceY2LwrTsql061hyfijrkpkDpfcPV9JGEDc8Xcpjs3mFXrsDcV36dKwca8h-2u0RfQD-sJLYFuA3WIpvQFPNOnaT3ytq-BdpB87oPAo9r-JtFznod",
+    genre: "Architecture",
+    tags: ["Architecture", "Photography", "Art"],
+    synopsis: "A striking visual journey through contemporary metropolis architecture, celebrating raw textures, geometric balance, and spatial poetry.",
+    inCartDefault: true,
+    defaultQty: 2
+  },
+  {
+    id: "tomorrow-and-tomorrow",
+    title: "Tomorrow, and Tomorrow, and Tomorrow",
+    author: "Gabrielle Zevin",
+    price: 17.50,
+    rating: 4.7,
+    reviewsCount: "3.5k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuA6umSp-8xfs1CT5cxGd0mpRGdgC9NXCi8RDQOggWfuHuwrTcnIxxLVh4fX8vHcH-72M7c_ailFYFf3qkwHUVD8oRjgIaqtb-R9g_8NsLOxbbj64l4hnhAxUuCrOz_4QEVZUu0j9zogavcyL7UdJjJSTZdGlojozf2gNc8M1K2ZzvTaVU6uQAT0YpomxGlzCrpCCX_mDCysWAob6K_SfmM8IuSRVtBgrz6rCHzy5qZ5WfqwXX6REEyE",
+    genre: "Fiction",
+    tags: ["Fiction", "Friendship", "Gaming"],
+    synopsis: "Two childhood friends collaborate on a breakout video game that catapults them into fame, wealth, and heartbreak over three decades.",
+    isSimilar: true
+  },
+  {
+    id: "the-dutch-house",
+    title: "The Dutch House",
+    author: "Ann Patchett",
+    price: 15.99,
+    rating: 4.6,
+    reviewsCount: "1.9k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEhWWfHjdOaNLjMFMxF8moSkmaEk9LrDjjTHtBmHMJijYhavIw5P1YCndhb9HGnNw4Sy2kwuRE8ao0qF1KzrTUmKWGFAnq42jVGishwm6_KC-NcPUTgXzadzm9xrlOLi9JQPjUURA7Q1o529EsYSf3gKGGIsHq4zCvtQmclBNW6L1-niwfth_Zum0dyzeOumPOfTjGVHolNWckJXfHWwaLZ0p3CiVL0KAzyXFKhnJMb0xoXQxJ-fui",
+    genre: "Historical",
+    tags: ["Historical", "Drama", "Family"],
+    synopsis: "At the end of the Second World War, Cyril Conroy combines luck and a single canny investment to begin an enormous real estate empire.",
+    isSimilar: true
+  },
+  {
+    id: "a-little-life",
+    title: "A Little Life",
+    author: "Hanya Yanagihara",
+    price: 18.00,
+    rating: 4.8,
+    reviewsCount: "4.2k reviews",
+    cover: "https://lh3.googleusercontent.com/aida-public/AB6AXuCco7nPpJ2VbW1AjIFtsDnU3sur-bQBZpO5C6iy8tWdbUGelC_b-X1mQndOUbz_MdBQPzSwkrvP7Zs44NFcqYTKoG-nN2fQm7JPhLL8FxxARC-uH5M3bi3fUavf7mUevD2Ie1pE71S7ZYzkCX1S_q_oTFPw7ApYyOtjmVk1iUYJMDQcjqqr6zXPIz6eVirNmUFgqPtBeZkteqJfH5wOMbY_moxl1QUnmC9iOasRzqYG0RFWeWAm4fBJ",
+    genre: "Fiction",
+    tags: ["Fiction", "Drama", "Emotional"],
+    synopsis: "When four classmates from a small Massachusetts college move to New York to make their way, they're broke, adrift, and buoyed only by their friendship and ambition.",
+    isSimilar: true
+  }
+];
+
+export const CATEGORIES_DATA = [
+  {
+    id: "romance",
+    title: "Romance",
+    bgClass: "bg-surface-container-high",
+    textClass: "text-on-primary-container",
+    arrowColor: "text-primary",
+    span: "col-span-1",
+    aspect: "aspect-square",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAEB_VyEU3zyBnCmd61TQlx81FgGKyonzTJqxpoPfU5CnfmvwCoaC9noTqsCvu4TdcuIZs7_AoCLaqTM3mPBG_fxXk1C8ObemLChszmluq317fuhZCIWsyjv-L9xSN06ssRq4v9-xHi57dsfkyuA6t2Vfwohv9NaYbGb_MLIxJh4umGtWmddwcxB_rB27PlY6JG0y6p3SOY4kAwURtKMVPpzGBISjpwv7difAYSt4eTV8dDZyPCIUXI"
+  },
+  {
+    id: "fantasy",
+    title: "Fantasy",
+    bgClass: "bg-tertiary-fixed",
+    textClass: "text-on-tertiary-fixed-variant",
+    arrowColor: "text-tertiary",
+    span: "col-span-1 md:col-span-2",
+    aspect: "aspect-square md:aspect-auto",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDXAJGKFL7Yk5IHwAJzVI0WIPwU1fYKUm5pGdw9D4TAgc76zKHoG-6hEvvM8QK80egjQkglDtXQJMH6961kEkgi_vKZWYbD7BI82jdKp3iNYrm5bvzDHtMJQZZT3lmIzCJyWEaJHjyZdQp3uRtF8mRijyHdQOmALaHhR_MCnKTDAFHrF2W-l191O0jB4AG9gkk2WUnDTtE-nGRXWttKN3LwaEMkrO-vyFUPy0IBCa6jk8IrKo5bKHOW"
+  },
+  {
+    id: "mystery",
+    title: "Mystery",
+    bgClass: "bg-surface-variant",
+    textClass: "text-on-surface-variant",
+    arrowColor: "text-on-surface-variant",
+    span: "col-span-1",
+    aspect: "aspect-square",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuABeoGUjUxZ0hPH1OkQ5Mot99q07XyltVfyC73vd1wecUCa_BHSS7S4jq9XD9LnY7o5HsvLv1o8T9AniJ_FhIpVAzxlWeigy0opbf40molWoXo7GtrZUQpkPBLfQpNCvUrCVFEXbF4NeVPemC1Pp2IQegG8BoppDXksPfIC4pih8y9agbssNHdZ2XqPSxNfdEuMh8aTONNh0dFxre9x1OU1EX1Vn-FYbHqzOsN9DU5W6wPMLvDa9bj4"
+  },
+  {
+    id: "self-help",
+    title: "Self Help",
+    bgClass: "bg-surface-container",
+    textClass: "text-on-surface-variant",
+    arrowColor: "text-primary",
+    span: "col-span-2 md:col-span-1",
+    aspect: "aspect-[4/3] md:aspect-square",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDDYqpqHZwmNJSCvfppz12Jc1Ce-qcNGArToT-AxI82Fg2wD8DZWYuQpCS5ZXVwScGQQvsJw9cAprB9L_v3TgKST5gN2IUfPet7IuogRbVHYYYoCvZHerGV-qfthUGoYcQfSb44skWM4XAvHV3VWMeWI1ol6_ouuiMIx7IirPsTfbjB7Cyxbt54AvTng_30TFm6k2bnldvku2-NijtdSCwZA3_hefsQi3lJgfMiA9ukBXyGjs4OiUp_"
+  },
+  {
+    id: "sci-fi",
+    title: "Sci-Fi",
+    bgClass: "bg-primary-fixed",
+    textClass: "text-on-primary-fixed",
+    arrowColor: "text-primary",
+    span: "col-span-1",
+    aspect: "aspect-square",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCFY-z8vdBpIbomZZJVXeTSu8Svn-bLNac_AfFJ2e68H9FlqLFxAqydQmKNslk3RY21mmHWDsEIyrvQBROkeXqYTWcX2SwjrRhlX4l3ak2MAWYe4EiKfR-vea7Tg6nzdEhZYblHutg8AVUQTxL6glOSDUbkWr5pHZGPHr5HMOQ8QCFQh1da6okgvdkyWIRVSQKoglBneHNhO9h2zVcUo5v_jCo-vt-gaOal72h5dzIx1y15BgGND_Zy"
+  },
+  {
+    id: "history",
+    title: "History",
+    bgClass: "bg-surface-container-high",
+    textClass: "text-on-surface",
+    arrowColor: "text-primary",
+    span: "col-span-1 md:col-span-2",
+    aspect: "aspect-square md:aspect-auto",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCWlJPBLSq9X-OO4jVY4hBF2k5WSwOPbxMy_srtUc2_0OPw9YYp2H9cINWQoKtet5c1NxXlDaxTVUEbwp2JEhKcpvCrRD5vN-zDwC-8TOQpBjQPet2-rtI3wW2tMN5tNbVvtGAO6cekK3Qwm7Gacx-L0BW_i7EnrG-Jv5MYkwnMjbRMXLaTp8L3kOctUVREEZhUHX_XNfoRzWeMIjKediQO9iGrrYC6G8HtRxzMdY2bOU4nTvrtoAzs"
+  }
+];
+
+export const USER_PROFILE = {
+  name: "Alex Reader",
+  email: "alex.reader@example.com",
+  avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDR8-98K_pXlNceGWIeRKWlYoST1rboSGyXE7yINzAgzJRrQYFNfJSweOFKsGxnPapdw6yEx9uV0RpN675p9IKDVIoTkMHBoq03amyGwQTiHjsKtAfhahncahWp4CnAym3K5Wrscx_WqiN_RG0zh5ivl132QROc7RjM0NmSfE887IyH-7QR10XRdhy3owykalLeZMEk9qQi-B1BrBAJ2utDWffCJFJ5Z6yllsfZRSz5CJDCW-qYwShv",
+  headerAvatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-xChhxNJtSlJ-6YBL7lR36VpFuBRCRZNBjOkqK7WAk4UOXKbeol33ipaf7UUZZODDzHZltof-lnYHAz1WpciDAFuy0a8VhEQqnFPunOfDVxOqr8gc92TYqbzn4e61hDAMHgEc9Pe60j-HpkKb7UEXdvlidZC66XmO5tD9A_2TffGwr2JcJE6xakB4NN51h6_nCwW2-1yRkHpsQ1nMSUEvIPqmYgab5QaY3cmS5P0V_0N5BqeQJZFm",
+  reviewsCount: 12,
+  wishlistCount: 45,
+  ordersCount: 8
+};

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookStop - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#cde5ff",
+                    "on-primary-container": "#5c2800",
+                    "surface-container-high": "#fbe3d7",
+                    "on-secondary-container": "#5f6161",
+                    "text-primary": "#111111",
+                    "accent-soft": "#FFA94D",
+                    "background": "#fff8f5",
+                    "secondary-fixed": "#e2e2e2",
+                    "primary": "#994700",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#e0c0af",
+                    "tertiary": "#006399",
+                    "on-surface": "#251912",
+                    "tertiary-container": "#00a8ff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#753400",
+                    "on-tertiary-fixed-variant": "#004a75",
+                    "on-tertiary-container": "#003a5c",
+                    "primary-fixed-dim": "#ffb68b",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "surface-container-highest": "#f6ded2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#edd5ca",
+                    "on-background": "#251912",
+                    "primary-fixed": "#ffdbc8",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fff8f5",
+                    "on-primary-fixed": "#321200",
+                    "inverse-primary": "#ffb68b",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#ffede5",
+                    "secondary-container": "#dcdddd",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#001d32",
+                    "on-surface-variant": "#584235",
+                    "surface-container": "#ffeadf",
+                    "inverse-surface": "#3b2d26",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "secondary": "#5d5f5f",
+                    "surface-tint": "#994700",
+                    "text-secondary": "#666666",
+                    "surface-variant": "#f6ded2",
+                    "surface-container-low": "#fff1ea",
+                    "outline": "#8c7263",
+                    "primary-container": "#ff7a00",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#454747",
+                    "tertiary-fixed-dim": "#95ccff",
+                    "error-container": "#ffdad6",
+                    "surface": "#fff8f5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "32px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "48px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "headline-xl": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "headline-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            background-color: theme('colors.background');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased text-on-background pb-24 md:pb-0">
+<!-- Top Navigation (Desktop) / Hidden on Mobile -->
+<header class="hidden md:flex bg-background dark:bg-background text-primary dark:text-primary-fixed w-full top-0 sticky bg-background dark:bg-background transition-opacity duration-200 flex justify-between items-center px-margin-mobile py-md w-full z-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl cursor-pointer hover:opacity-80">menu</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">BookStop</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="flex gap-6">
+<a class="font-label-md text-label-md text-primary font-bold" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80" href="#">Search</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80" href="#">Wishlist</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80" href="#">Cart</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden cursor-pointer hover:opacity-80">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close up portrait of a young adult looking directly at the camera, soft natural lighting, light clean background, evoking a friendly and approachable persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBNuHuhAn8PnFIqoMrEdjqPuPiwbxx-fXEOtKIA5lxAqYs4mbTYWQU34XpGH3RJ64eA4iuuXAmOw8_3pfhk3ADOuaOM82weewbTMJe2HJtBCcvj-uI9k9frzTpsQTpBXbdKHX14B5C4noEGXtKVGWoEITRNeXWjNktW6j75rQqGNixSZKcpELjkFD6rSjF7HMy0LyRClHSS38PERiW9itw_wpu9RZnJk9vd5GVtr3gI3r09AUKppSS"/>
+</div>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="max-w-[1200px] mx-auto w-full">
+<!-- Mobile Header & Greeting -->
+<div class="px-margin-mobile pt-lg pb-sm md:hidden flex justify-between items-center">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">Hi, Reader!</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Ready for your next adventure?</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden shadow-sm">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close up portrait of a young adult looking directly at the camera, soft natural lighting, light clean background, evoking a friendly and approachable persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-xChhxNJtSlJ-6YBL7lR36VpFuBRCRZNBjOkqK7WAk4UOXKbeol33ipaf7UUZZODDzHZltof-lnYHAz1WpciDAFuy0a8VhEQqnFPunOfDVxOqr8gc92TYqbzn4e61hDAMHgEc9Pe60j-HpkKb7UEXdvlidZC66XmO5tD9A_2TffGwr2JcJE6xakB4NN51h6_nCwW2-1yRkHpsQ1nMSUEvIPqmYgab5QaY3cmS5P0V_0N5BqeQJZFm"/>
+</div>
+</div>
+<!-- Desktop Greeting (Hidden on mobile) -->
+<div class="hidden md:block px-margin-desktop py-lg">
+<h1 class="font-headline-xl text-headline-xl text-on-background">Hi, Reader!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Ready for your next adventure?</p>
+</div>
+<!-- Floating Search Bar -->
+<div class="px-margin-mobile md:px-margin-desktop py-sm sticky top-0 md:top-20 z-30 bg-background/90 backdrop-blur-md pb-md">
+<div class="relative w-full h-14 bg-surface rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.06)] border border-surface-variant flex items-center px-4 group focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-text-secondary group-focus-within:text-primary transition-colors mr-3 text-2xl">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-md text-body-md text-text-primary placeholder-text-secondary p-0" placeholder="Search books, authors, or genres..." type="text"/>
+</div>
+</div>
+<!-- Promo Banner -->
+<section class="px-margin-mobile md:px-margin-desktop py-md">
+<div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-high h-48 md:h-64 flex items-center shadow-sm" data-alt="A wide panoramic illustration of a warm, sunlit reading nook by a large window overlooking a lush summer garden. A stack of colorful books sits on a small wooden table next to a glass of iced lemonade. The style is modern, vibrant, and welcoming, using warm minimalist aesthetics with soft lighting and bright orange accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA24psoePi8kEM-KE7dPVS8gfqQtc4JWpgmzmxFOECnRnpnilKlOtAC7m4iWoX-68Avo-B14o6fP-u8ssNyTDSzHR9HvLao3C0xoq2ol6h2kvCeos_426-1_sHrv47bLxxx_IUJArloobd708NFKYEZO6P1Qehqc2W-fFXMyH5uS4hJT2MjB1wN6y-4ZQ3-EekujrdAVGBlcGFllNCUVoQ3bEeI545lTvSopTkFCx0qp6P3kPr0MYep')">
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 to-transparent"></div>
+<div class="relative z-10 px-6 md:px-12 max-w-sm md:max-w-md">
+<span class="inline-block px-3 py-1 bg-primary text-on-primary font-label-sm text-label-sm rounded-full mb-3 uppercase tracking-wider font-bold">Summer Sale</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Dive into a new world</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Up to 40% off selected fiction titles.</p>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">Shop Now</button>
+</div>
+</div>
+</section>
+<!-- Trending Books (Horizontal Scroll) -->
+<section class="py-md">
+<div class="px-margin-mobile md:px-margin-desktop flex justify-between items-end mb-4">
+<h3 class="font-headline-md text-headline-md text-on-background">Trending Books</h3>
+<a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="#">View All</a>
+</div>
+<div class="flex overflow-x-auto no-scrollbar gap-4 px-margin-mobile md:px-margin-desktop pb-4 snap-x">
+<!-- Book Card 1 -->
+<div class="flex-none w-[140px] md:w-[180px] snap-start group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden aspect-[2/3] mb-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300">
+<img alt="The Silent Echo" class="w-full h-full object-cover" data-alt="A minimalist book cover design featuring abstract geometric shapes in deep blues and warm oranges on a clean cream background. The title 'The Silent Echo' is written in elegant serif typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLo-Pdpa9v48tEX33_eoxwYty0XzGhOt0ED2pHGIgISJx8Vs0X243KeI4N6cftCPWaHuP_pKWhcYC9RNuZNgV1MCMfpu5Rgor2xqNk9Uc2XODPQXz0iFrPIX-EPIkBHwFAKUBoQkW0oWKPkUmys8XkxS5WnVL3YOza2vcr4VNbaY6WR88GK2CYp6jd8mtX0ByXAWiTHS0Y5WguWXDK5U7YP3QIDEvmN3n5udYlVjylHibqxfjmgmmD"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary truncate">The Silent Echo</h4>
+<p class="font-body-md text-[13px] text-text-secondary truncate">E.R. Stone</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-text-primary">4.8</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">$18.99</span>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="flex-none w-[140px] md:w-[180px] snap-start group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden aspect-[2/3] mb-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300">
+<img alt="Dune Walker" class="w-full h-full object-cover" data-alt="A striking book cover design showing a solitary figure standing on a vast, minimalist sand dune landscape under a bright, high-key sky. The colors are soft pastels with a bold red title 'Dune Walker'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz-1T29F77RhrwZ8j8BJRLogmWGK3dYCZmyKYxRYjBYHD2OnL5HUhbzW5aCx2IjKCGrUVlodWlbylq2xyBHt1iwXJGoqiBZ-8HmBoNOtiiIkNfxOfVEU3yfhxbCQiGQWpKUm4Alt0Cz0UhsObyhRc7kUqGIJZ3QtMV9oPIh48rlTg-OrX2BVW5UXrcpSQT_4C87Ekj0hMOJw5MMMV9yErnTRXcMN4t3U95lPObTCSKWRJhmLSN7rwp"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary truncate">Dune Walker</h4>
+<p class="font-body-md text-[13px] text-text-secondary truncate">T.J. Howell</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-text-primary">4.5</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">$22.50</span>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="flex-none w-[140px] md:w-[180px] snap-start group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden aspect-[2/3] mb-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300">
+<img alt="Morning Light" class="w-full h-full object-cover" data-alt="A modern book cover with a clean white background featuring a delicate watercolor painting of a single orange poppy flower. The typography is modern sans-serif, reading 'Morning Light'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA07YnL8q8_-NcPSjC2FLR5uS5bDOKlz_Zm_OqRDl4uHwJ3WpUl4j5FF0TM_VpJtxrUWZ2SiXeCRIZ45dEc1bJdXiFsrztdJTARIE-KmeG8yRIrnz-NUf3D6Ocej8AJZCwM_HD3BmgbW5p5IevcbRmxprNeHdY29cs_O7r6e5htAKCvOIDQmPlBto9ieKoCAevTwEFa1lmclYGZ5F11w1DyiFoJzcFAbncB8bxjdjKV1EyVPlr8YYH"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary truncate">Morning Light</h4>
+<p class="font-body-md text-[13px] text-text-secondary truncate">Sarah Jenkins</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-text-primary">4.9</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">$16.00</span>
+</div>
+</div>
+<!-- Book Card 4 -->
+<div class="flex-none w-[140px] md:w-[180px] snap-start group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden aspect-[2/3] mb-3 shadow-[0_4px_12px_rgba(0,0,0,0.08)] group-hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-shadow duration-300">
+<img alt="Midnight City" class="w-full h-full object-cover" data-alt="A dark and moody book cover design featuring a silhouette of a city skyline against a deep navy blue sky dotted with tiny stars. The title 'Midnight City' is in a glowing white neon-style font." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFY-z8vdBpIbomZZJVXeTSu8Svn-bLNac_AfFJ2e68H9FlqLFxAqydQmKNslk3RY21mmHWDsEIyrvQBROkeXqYTWcX2SwjrRhlX4l3ak2MAWYe4EiKfR-vea7Tg6nzdEhZYblHutg8AVUQTxL6glOSDUbkWr5pHZGPHr5HMOQ8QCFQh1da6okgvdkyWIRVSQKoglBneHNhO9h2zVcUo5v_jCo-vt-gaOal72h5dzIx1y15BgGND_Zy"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary truncate">Midnight City</h4>
+<p class="font-body-md text-[13px] text-text-secondary truncate">David K.</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-text-primary">4.2</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">$19.99</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended For You (Vertical Grid) -->
+<section class="py-md pb-24 md:pb-12">
+<div class="px-margin-mobile md:px-margin-desktop flex justify-between items-end mb-6">
+<h3 class="font-headline-md text-headline-md text-on-background">Recommended For You</h3>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-8">
+<!-- Grid Book 1 -->
+<div class="group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden aspect-[2/3] mb-3 shadow-[0_4px_12px_rgba(0,0,0,0.06)] group-hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-shadow duration-300">
+<img alt="Focus" class="w-full h-full object-cover" data-alt="A minimalist non-fiction book cover featuring a stark white background with a simple, bold orange typography design for the title 'Focus'. The aesthetic is very clean and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDYqpqHZwmNJSCvfppz12Jc1Ce-qcNGArToT-AxI82Fg2wD8DZWYuQpCS5ZXVwScGQQvsJw9cAprB9L_v3TgKST5gN2IUfPet7IuogRbVHYYYoCvZHerGV-qfthUGoYcQfSb44skWM4XAvHV3VWMeWI1ol6_ouuiMIx7IirPsTfbjB7Cyxbt54AvTng_30TFm6k2bnldvku2-NijtdSCwZA3_hefsQi3lJgfMiA9ukBXyGjs4OiUp_"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary truncate">Focus</h4>
+<p class="font-body-md text-[13px] text-text-secondary truncate">Dr. A. Miller</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-text-primary">4.6</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">$14.99</span>
+</div>
+</div>
+<!-- Grid Book 2 -->
+<div class="group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden aspect-[2/3] mb-3 shadow-[0_4px_12px_rgba(0,0,0,0.06)] group-hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-shadow duration-300">
+<img alt="The Coffee Shop Diaries" class="w-full h-full object-cover" data-alt="A cozy, illustrated book cover showing a warm, softly lit cafe scene with a steaming cup of coffee in the foreground. The style is soft pastels with a warm, inviting aesthetic. Title: 'The Coffee Shop Diaries'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK3jy97OhSMvxr6DntlZG8yTcPgU1vQ2d3XHQGgwjTfX9ZWO7F-IO5oeznOE-eGWu7DQcWL9KyblmITREssjV1ZnvKMB1GdA3bea92-3zvBktkB0MO2lne4H3KU5Ej8zsinb87_4rx9yliqcN3XRLfuVPT3Mu7jo-U8pY2AE_KhhrYYV8c_s7ZLso6Qsv27Szlg2E1gEIQ7367kTU5Reng_cgUFLk-M3D20C9R1ETai7mpEVg8bdGU"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary truncate">Coffee Shop Diaries</h4>
+<p class="font-body-md text-[13px] text-text-secondary truncate">L. B. Cole</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-text-primary">4.4</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">$12.50</span>
+</div>
+</div>
+<!-- Grid Book 3 -->
+<div class="group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden aspect-[2/3] mb-3 shadow-[0_4px_12px_rgba(0,0,0,0.06)] group-hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-shadow duration-300">
+<img alt="Art of Stillness" class="w-full h-full object-cover" data-alt="An abstract, modern book cover featuring sweeping curves in soft cream and vibrant orange. The typography is elegant and minimal, centered on the page. Title: 'Art of Stillness'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKk77gbiYv-Xzgi7SU0NC4dRL22mRw-zPi-dnNDQyj4ciwqMxe3p7JscRJh3HQ0TLmGgFD3W-pH5yrk_cy7g_5zIpR76v3JlQCHrg21DBVnW44uhliWvuwlxHBnGW3ANSUD42vcl7c-1jp8_Q_mRWxmzf3c9YgO46ZjBZWGAh-UELk_CZFV89gm-VeDdWxVW0gx2jAgmMpqUHmIZ6rurC62ONs5sVFGXVAQgqPj6p_f74tGGsYJJKq"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary truncate">Art of Stillness</h4>
+<p class="font-body-md text-[13px] text-text-secondary truncate">Maya Lin</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-text-primary">4.9</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">$24.00</span>
+</div>
+</div>
+<!-- Grid Book 4 -->
+<div class="group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden aspect-[2/3] mb-3 shadow-[0_4px_12px_rgba(0,0,0,0.06)] group-hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-shadow duration-300">
+<img alt="The Hidden Botanist" class="w-full h-full object-cover" data-alt="A vintage-inspired book cover featuring a beautifully detailed botanical illustration of fern leaves against a soft beige background. Classic serif typography. Title: 'The Hidden Botanist'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWlJPBLSq9X-OO4jVY4hBF2k5WSwOPbxMy_srtUc2_0OPw9YYp2H9cINWQoKtet5c1NxXlDaxTVUEbwp2JEhKcpvCrRD5vN-zDwC-8TOQpBjQPet2-rtI3wW2tMN5tNbVvtGAO6cekK3Qwm7Gacx-L0BW_i7EnrG-Jv5MYkwnMjbRMXLaTp8L3kOctUVREEZhUHX_XNfoRzWeMIjKediQO9iGrrYC6G8HtRxzMdY2bOU4nTvrtoAzs"/>
+<button class="absolute top-2 right-2 w-8 h-8 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<h4 class="font-label-md text-label-md text-text-primary truncate">The Hidden Botanist</h4>
+<p class="font-body-md text-[13px] text-text-secondary truncate">Arthur V.</p>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold text-text-primary">4.7</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">$21.99</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden bg-surface dark:bg-surface-dim shadow-[0_-4px_12px_rgba(0,0,0,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-8 rounded-t-lg">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-container font-bold scale-110 transition-transform group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:text-primary-container" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm group-hover:text-primary-container">Home</span>
+</a>
+<!-- Search (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary-container transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined mb-1">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<!-- Wishlist (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary-container transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined mb-1">favorite</span>
+<span class="font-label-sm text-label-sm">Wishlist</span>
+</a>
+<!-- Cart (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary-container transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined mb-1">shopping_cart</span>
+<span class="font-label-sm text-label-sm">Cart</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary-container transition-all duration-150 group" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

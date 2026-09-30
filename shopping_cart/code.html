@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shopping Cart - BookStop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#cde5ff",
+                        "on-primary-container": "#5c2800",
+                        "surface-container-high": "#fbe3d7",
+                        "on-secondary-container": "#5f6161",
+                        "text-primary": "#111111",
+                        "accent-soft": "#FFA94D",
+                        "background": "#fff8f5",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary": "#994700",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e0c0af",
+                        "tertiary": "#006399",
+                        "on-surface": "#251912",
+                        "tertiary-container": "#00a8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#753400",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-tertiary-container": "#003a5c",
+                        "primary-fixed-dim": "#ffb68b",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#f6ded2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#edd5ca",
+                        "on-background": "#251912",
+                        "primary-fixed": "#ffdbc8",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "on-primary-fixed": "#321200",
+                        "inverse-primary": "#ffb68b",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ffede5",
+                        "secondary-container": "#dcdddd",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-surface-variant": "#584235",
+                        "surface-container": "#ffeadf",
+                        "inverse-surface": "#3b2d26",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "secondary": "#5d5f5f",
+                        "surface-tint": "#994700",
+                        "text-secondary": "#666666",
+                        "surface-variant": "#f6ded2",
+                        "surface-container-low": "#fff1ea",
+                        "outline": "#8c7263",
+                        "primary-container": "#ff7a00",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-fixed-dim": "#95ccff",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["manrope"],
+                        "body-md": ["manrope"],
+                        "headline-xl": ["manrope"],
+                        "headline-lg-mobile": ["manrope"],
+                        "label-md": ["manrope"],
+                        "label-sm": ["manrope"],
+                        "headline-lg": ["manrope"],
+                        "headline-md": ["manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-[100px] md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background flex justify-between items-center px-margin-mobile py-md z-40 transition-opacity duration-200">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">BookStop</h1>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity p-2 rounded-full overflow-hidden w-10 h-10 flex items-center justify-center bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="max-w-3xl mx-auto px-margin-mobile pt-lg pb-xl">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-lg">Your Cart</h2>
+<div class="flex flex-col gap-lg">
+<!-- Cart Item 1 -->
+<div class="flex gap-md bg-surface-container-lowest rounded-lg p-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant relative">
+<div class="w-24 h-36 flex-shrink-0 rounded bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A book cover showing a minimalist abstract design with warm orange and beige tones, titled 'The Art of Simplicity', set in a bright, modern studio light, high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwt6nv2DDe9GHm2_p6cjOjOO1rIKtAo4GRwymhmySoxg5C3T5bcCDM0thY9kotoG0JDgK-snn6gSr2EWaBLbbsqaOJhcoJkUmw0chsOJgG-H24aaLO81i0h-roCOKD1lQMEmRFUavFw2lcj9tOqaxxEqbH7DZ5hV9nP0pblzSh6E8QTGNfY0v5FF6UF-8vQ_5Izwq5WpIdUtMmQqrgW3SLDetgKbDserNgVdLXS4pzHDISiyGnlO7G"/>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background leading-tight">The Art of Simplicity</h3>
+<p class="font-body-md text-body-md text-text-secondary mt-xs">Jane Austen</p>
+</div>
+<div class="flex items-center justify-between mt-sm">
+<span class="font-headline-md text-headline-md text-primary">$24.99</span>
+<div class="flex items-center bg-surface-variant rounded-full p-1 border border-outline-variant">
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-label-md text-label-md w-8 text-center">1</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<button class="absolute top-md right-md text-text-secondary hover:text-error transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex gap-md bg-surface-container-lowest rounded-lg p-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant relative">
+<div class="w-24 h-36 flex-shrink-0 rounded bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A book cover with a striking, high-contrast black and white architectural photograph, subtle orange typography reading 'Urban Spaces', well lit, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxKZ0dgKKNVtgZe7hGt9tz1bZDrIvstDDphyZxDXWt7jnkSg1GlLYbGIQ51P0qrbi-OIsK0uvT0V-1-MEsBwqkxbZVCUmE7VI12vB01-NYbVAFnyXJqGq_6s7oXa_zS459KToceY2LwrTsql061hyfijrkpkDpfcPV9JGEDc8Xcpjs3mFXrsDcV36dKwca8h-2u0RfQD-sJLYFuA3WIpvQFPNOnaT3ytq-BdpB87oPAo9r-JtFznod"/>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background leading-tight">Urban Spaces</h3>
+<p class="font-body-md text-body-md text-text-secondary mt-xs">David Miller</p>
+</div>
+<div class="flex items-center justify-between mt-sm">
+<span class="font-headline-md text-headline-md text-primary">$32.50</span>
+<div class="flex items-center bg-surface-variant rounded-full p-1 border border-outline-variant">
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-label-md text-label-md w-8 text-center">2</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<button class="absolute top-md right-md text-text-secondary hover:text-error transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<!-- Coupon Section -->
+<div class="mt-md">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-text-secondary">local_offer</span>
+<input class="w-full pl-12 pr-24 py-4 rounded-full bg-surface-variant border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface placeholder-text-secondary transition-all outline-none" placeholder="Coupon Code" type="text"/>
+<button class="absolute right-2 top-2 bottom-2 bg-primary-container text-on-primary-container font-label-md text-label-md px-4 rounded-full hover:bg-primary hover:text-on-primary transition-colors shadow-sm">
+                        Apply
+                    </button>
+</div>
+</div>
+<!-- Summary Section -->
+<div class="bg-surface-container-low rounded-lg p-lg mt-md shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+<div class="flex flex-col gap-sm border-b border-surface-variant pb-md mb-md">
+<div class="flex justify-between font-body-md text-body-md text-text-secondary">
+<span>Subtotal</span>
+<span class="text-on-background">$89.99</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-text-secondary">
+<span>Delivery</span>
+<span class="text-on-background">$4.99</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-on-background">Total</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold">$94.98</span>
+</div>
+</div>
+<!-- Checkout Button -->
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-4 rounded-full mt-sm hover:bg-primary hover:text-on-primary hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                Checkout
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-8 bg-surface rounded-t-lg shadow-lg">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-all duration-150">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-all duration-150">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-all duration-150">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm">Wishlist</span>
+</button>
+<!-- Active Tab: Cart -->
+<button class="flex flex-col items-center justify-center text-primary font-bold scale-110 transition-transform duration-150 relative">
+<div class="absolute -top-1 -right-2 bg-error text-on-error font-label-sm text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</div>
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="shopping_cart" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-label-sm text-label-sm">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-container transition-all duration-150">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

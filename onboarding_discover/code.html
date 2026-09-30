@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Discover Books</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#cde5ff",
+                        "on-primary-container": "#5c2800",
+                        "surface-container-high": "#fbe3d7",
+                        "on-secondary-container": "#5f6161",
+                        "text-primary": "#111111",
+                        "accent-soft": "#FFA94D",
+                        "background": "#fff8f5",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary": "#994700",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e0c0af",
+                        "tertiary": "#006399",
+                        "on-surface": "#251912",
+                        "tertiary-container": "#00a8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#753400",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-tertiary-container": "#003a5c",
+                        "primary-fixed-dim": "#ffb68b",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#f6ded2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#edd5ca",
+                        "on-background": "#251912",
+                        "primary-fixed": "#ffdbc8",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "on-primary-fixed": "#321200",
+                        "inverse-primary": "#ffb68b",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ffede5",
+                        "secondary-container": "#dcdddd",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-surface-variant": "#584235",
+                        "surface-container": "#ffeadf",
+                        "inverse-surface": "#3b2d26",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "secondary": "#5d5f5f",
+                        "surface-tint": "#994700",
+                        "text-secondary": "#666666",
+                        "surface-variant": "#f6ded2",
+                        "surface-container-low": "#fff1ea",
+                        "outline": "#8c7263",
+                        "primary-container": "#ff7a00",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-fixed-dim": "#95ccff",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["manrope"],
+                        "body-md": ["manrope"],
+                        "headline-xl": ["manrope"],
+                        "headline-lg-mobile": ["manrope"],
+                        "label-md": ["manrope"],
+                        "label-sm": ["manrope"],
+                        "headline-lg": ["manrope"],
+                        "headline-md": ["manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #ffffff; /* Pure white foundation requested in Style Guidance */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle pulse for the next button */
+        @keyframes subtle-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 122, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+        }
+        .btn-pulse {
+            animation: subtle-pulse 2s infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center justify-center text-on-surface antialiased bg-white selection:bg-primary-container selection:text-on-primary-container overflow-hidden relative">
+<!-- Decorative subtle background blobs for warm minimalism -->
+<div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-surface-container-low rounded-full mix-blend-multiply filter blur-3xl opacity-50 z-0"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-surface-container-high rounded-full mix-blend-multiply filter blur-3xl opacity-50 z-0"></div>
+<main class="w-full max-w-[480px] h-[884px] flex flex-col bg-white relative z-10 shadow-2xl md:h-[850px] md:rounded-3xl md:my-auto md:border md:border-surface-variant overflow-hidden">
+<!-- Top App Bar - Simplified for Onboarding -->
+<header class="w-full top-0 sticky flex justify-between items-center px-margin-mobile py-md bg-white z-20">
+<!-- Brand Anchor -->
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">
+                BookStop
+            </div>
+<!-- Skip Button -->
+<button class="font-label-md text-label-md text-text-secondary hover:text-primary transition-colors duration-200 px-3 py-2">
+                Skip
+            </button>
+</header>
+<!-- Illustration Area (Bento Grid inspired asymmetrical top section) -->
+<div class="flex-1 w-full px-margin-mobile pt-md pb-lg flex flex-col justify-center items-center relative overflow-hidden">
+<div class="w-full h-full max-h-[442px] relative rounded-DEFAULT overflow-hidden shadow-sm bg-surface-container-low group">
+<!-- Aesthetic literary illustration -->
+<img alt="Illustration of a girl reading in a cozy room" class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="A beautiful, aesthetic vector illustration of a girl reading a book in a cozy, sunlit room. The art style is modern, warm minimalism with smooth curves and a soft color palette heavily featuring pure whites, warm light grays, and vibrant orange accents. The lighting is soft and airy, creating a calm, inspiring, and inviting atmosphere perfect for a literary app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnTNW6kSq2ahFvWmKTXKwsiALU2may7NCwqzlULCmSEbCb4hB-ZBm7uz7wDOAU-WtBiRSmTwVyd_Ipwh-v3_bTVMXcu7qPGKuzjaX6cxS696f78Jtzi1Iv_rM-2HoZ6Ut3k3hWHJ7MMjXXsUf__lWJC4E1iy43jAVKOwQTzNKm9EoggRB1lj21OxlnqPj7vuv5XWVF4LPtlte792YnKWlg7aSYOQj2_6LMa5FeOdfAiFxGeEnHRgSj"/>
+<!-- Floating decorative element to add depth -->
+<div class="absolute -bottom-4 -right-4 bg-white/80 backdrop-blur-md p-4 rounded-full shadow-lg border border-surface-variant">
+<span class="material-symbols-outlined text-primary-container text-[32px]" style="font-variation-settings: 'FILL' 1;">
+                        auto_awesome
+                    </span>
+</div>
+</div>
+</div>
+<!-- Content & Navigation Bottom Area -->
+<div class="w-full px-margin-mobile pb-[48px] pt-lg bg-white rounded-t-xl z-20 flex flex-col gap-xl">
+<!-- Progress Indicators -->
+<div class="flex justify-center gap-2 items-center">
+<div class="h-2 w-8 rounded-full bg-primary-container transition-all duration-300"></div>
+<div class="h-2 w-2 rounded-full bg-secondary-fixed transition-all duration-300"></div>
+<div class="h-2 w-2 rounded-full bg-secondary-fixed transition-all duration-300"></div>
+</div>
+<!-- Typography Content -->
+<div class="text-center flex flex-col gap-sm">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary">
+                    Discover thousands of books
+                </h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-[85%] mx-auto">
+                    Explore a vast, aesthetic literary haven tailored to your tastes. Find your next favorite story in our curated collections.
+                </p>
+</div>
+<!-- Action Area -->
+<div class="w-full flex justify-center mt-sm">
+<button class="btn-pulse flex items-center justify-center gap-2 w-full max-w-[240px] py-4 bg-primary-container text-white font-label-md text-label-md rounded-full shadow-[0_8px_16px_rgba(255,122,0,0.2)] hover:bg-primary transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 active:scale-95">
+                    Next
+                    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">
+                        arrow_forward
+                    </span>
+</button>
+</div>
+</div>
+</main>
+<!-- Navigation shells (TopAppBar / BottomNavBar) are SUPPRESSED here as per the "Linear/Transactional" rule for Onboarding screens -->
+</body></html>

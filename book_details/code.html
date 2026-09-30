@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#cde5ff",
+                        "on-primary-container": "#5c2800",
+                        "surface-container-high": "#fbe3d7",
+                        "on-secondary-container": "#5f6161",
+                        "text-primary": "#111111",
+                        "accent-soft": "#FFA94D",
+                        "background": "#fff8f5",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary": "#994700",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e0c0af",
+                        "tertiary": "#006399",
+                        "on-surface": "#251912",
+                        "tertiary-container": "#00a8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#753400",
+                        "on-tertiary-fixed-variant": "#004a75",
+                        "on-tertiary-container": "#003a5c",
+                        "primary-fixed-dim": "#ffb68b",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#f6ded2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#edd5ca",
+                        "on-background": "#251912",
+                        "primary-fixed": "#ffdbc8",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "on-primary-fixed": "#321200",
+                        "inverse-primary": "#ffb68b",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ffede5",
+                        "secondary-container": "#dcdddd",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-surface-variant": "#584235",
+                        "surface-container": "#ffeadf",
+                        "inverse-surface": "#3b2d26",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "secondary": "#5d5f5f",
+                        "surface-tint": "#994700",
+                        "text-secondary": "#666666",
+                        "surface-variant": "#f6ded2",
+                        "surface-container-low": "#fff1ea",
+                        "outline": "#8c7263",
+                        "primary-container": "#ff7a00",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-fixed-dim": "#95ccff",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "headline-xl": ["Manrope", "sans-serif"],
+                        "headline-lg-mobile": ["Manrope", "sans-serif"],
+                        "label-md": ["Manrope", "sans-serif"],
+                        "label-sm": ["Manrope", "sans-serif"],
+                        "headline-lg": ["Manrope", "sans-serif"],
+                        "headline-md": ["Manrope", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #fff8f5; color: #111111; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-32 max-w-[1200px] mx-auto md:px-margin-desktop">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background dark:bg-background z-40 transition-opacity duration-200">
+<div class="flex justify-between items-center px-margin-mobile py-md w-full max-w-[1200px] mx-auto">
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 flex items-center justify-center p-2 -ml-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="flex gap-4">
+<button class="text-on-surface-variant hover:opacity-80 flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">share</span>
+</button>
+<button class="text-on-surface-variant hover:opacity-80 flex items-center justify-center p-2 -mr-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite_border</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="px-margin-mobile md:px-0 mt-4 animate-[fadeIn_0.5s_ease-out]">
+<!-- Hero Section: Cover Image -->
+<div class="flex justify-center mb-xl">
+<div class="w-[240px] md:w-[320px] aspect-[2/3] rounded-lg shadow-[0_12px_24px_rgba(153,71,0,0.15)] relative group overflow-hidden">
+<img alt="Book Cover" class="w-full h-full object-cover rounded-lg transform transition-transform duration-500 group-hover:scale-105" data-alt="A high-quality, professional photograph of a hardcover book titled 'The Silent Patient' lying on a clean white marble surface. The lighting is soft and natural, casting a gentle shadow. The overall aesthetic is minimalist, elegant, and warm, perfectly fitting an 'Aesthetic Literary Haven' theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtA-KASVlJJTUsu9TbNo1qlXWPZmVBHUNWkdq8RVisf6JcVetQ3x_mFVK4FAXNhfWqS3RDmnsfPIAhY6ri9_qs49riDUYrZl29nXO1y3RUVweRTcNNi2vJAuUfnknrxmjhW7pkh5O4XH6GkTa2IXmRszjzM62bV5xoH8KI964mY7Nd5AxRtm9Y-Zpw4XkwpS9e9S-tQJv0bcLEMU_w-ZIUnfwZpuddWAa40lL4k5EzSGLWpq--PnhM"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+</div>
+</div>
+<!-- Book Meta Data -->
+<div class="text-center md:text-left mb-xl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-text-primary mb-sm font-bold tracking-tight">The Midnight Library</h1>
+<p class="font-body-lg text-body-lg text-text-secondary mb-md">by Matt Haig</p>
+<div class="flex items-center justify-center md:justify-start gap-2 mb-lg">
+<div class="flex text-primary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant ml-2">4.8 (2.4k reviews)</span>
+</div>
+<!-- Genre Tags -->
+<div class="flex flex-wrap justify-center md:justify-start gap-2 mb-lg">
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-label-sm border border-outline-variant/30">Fiction</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-label-sm border border-outline-variant/30">Fantasy</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-label-sm border border-outline-variant/30">Contemporary</span>
+</div>
+</div>
+<!-- Description -->
+<div class="mb-xl md:mb-24">
+<h2 class="font-headline-md text-headline-md text-text-primary mb-md">Synopsis</h2>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+                Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived. To see how things would be if you had made other choices... Would you have done anything different, if you had the chance to undo your regrets?
+            </p>
+<button class="mt-2 text-primary font-label-md text-label-md hover:underline focus:outline-none">Read more</button>
+</div>
+<!-- Similar Books (Horizontal Scroll) -->
+<div class="mb-xl md:mb-32">
+<h2 class="font-headline-md text-headline-md text-text-primary mb-md">You might also like</h2>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 snap-x">
+<div class="snap-start shrink-0 w-[140px] md:w-[180px] group cursor-pointer">
+<div class="w-full aspect-[2/3] rounded-DEFAULT overflow-hidden mb-sm shadow-sm relative">
+<img alt="Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A minimalist book cover design featuring a solitary figure walking away on a misty path. The cover is predominantly pale blue and white. The book is resting on a light wooden table, shot with natural, diffused light to match the warm minimal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6umSp-8xfs1CT5cxGd0mpRGdgC9NXCi8RDQOggWfuHuwrTcnIxxLVh4fX8vHcH-72M7c_ailFYFf3qkwHUVD8oRjgIaqtb-R9g_8NsLOxbbj64l4hnhAxUuCrOz_4QEVZUu0j9zogavcyL7UdJjJSTZdGlojozf2gNc8M1K2ZzvTaVU6uQAT0YpomxGlzCrpCCX_mDCysWAob6K_SfmM8IuSRVtBgrz6rCHzy5qZ5WfqwXX6REEyE"/>
+</div>
+<h3 class="font-label-md text-label-md text-text-primary truncate">Tomorrow, and Tomorrow, and Tomorrow</h3>
+<p class="font-label-sm text-label-sm text-text-secondary truncate">Gabrielle Zevin</p>
+</div>
+<div class="snap-start shrink-0 w-[140px] md:w-[180px] group cursor-pointer">
+<div class="w-full aspect-[2/3] rounded-DEFAULT overflow-hidden mb-sm shadow-sm relative">
+<img alt="Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An elegant book cover showing a subtle watercolor illustration of an old house. The cover blends warm orange and soft cream tones. The book is presented straight on against a pure white background, fitting the high-end boutique bookshop style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEhWWfHjdOaNLjMFMxF8moSkmaEk9LrDjjTHtBmHMJijYhavIw5P1YCndhb9HGnNw4Sy2kwuRE8ao0qF1KzrTUmKWGFAnq42jVGishwm6_KC-NcPUTgXzadzm9xrlOLi9JQPjUURA7Q1o529EsYSf3gKGGIsHq4zCvtQmclBNW6L1-niwfth_Zum0dyzeOumPOfTjGVHolNWckJXfHWwaLZ0p3CiVL0KAzyXFKhnJMb0xoXQxJ-fui"/>
+</div>
+<h3 class="font-label-md text-label-md text-text-primary truncate">The Dutch House</h3>
+<p class="font-label-sm text-label-sm text-text-secondary truncate">Ann Patchett</p>
+</div>
+<div class="snap-start shrink-0 w-[140px] md:w-[180px] group cursor-pointer">
+<div class="w-full aspect-[2/3] rounded-DEFAULT overflow-hidden mb-sm shadow-sm relative">
+<img alt="Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A striking book cover design with bold typography on a deep teal background with subtle gold accents. The book is sitting on a clean, light gray marble surface with soft, natural lighting, maintaining a premium and airy look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCco7nPpJ2VbW1AjIFtsDnU3sur-bQBZpO5C6iy8tWdbUGelC_b-X1mQndOUbz_MdBQPzSwkrvP7Zs44NFcqYTKoG-nN2fQm7JPhLL8FxxARC-uH5M3bi3fUavf7mUevD2Ie1pE71S7ZYzkCX1S_q_oTFPw7ApYyOtjmVk1iUYJMDQcjqqr6zXPIz6eVirNmUFgqPtBeZkteqJfH5wOMbY_moxl1QUnmC9iOasRzqYG0RFWeWAm4fBJ"/>
+</div>
+<h3 class="font-label-md text-label-md text-text-primary truncate">A Little Life</h3>
+<p class="font-label-sm text-label-sm text-text-secondary truncate">Hanya Yanagihara</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Sticky) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md border-t border-surface-container shadow-[0_-4px_24px_rgba(0,0,0,0.04)] px-margin-mobile py-4 flex gap-4 md:hidden">
+<button class="flex-1 py-3 px-4 rounded-full border-2 border-primary text-primary font-label-md text-label-md flex items-center justify-center gap-2 bg-surface hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+            Add to Cart
+        </button>
+<button class="flex-1 py-3 px-4 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center shadow-[0_4px_12px_rgba(255,122,0,0.2)] hover:opacity-90 transition-opacity active:scale-95">
+            Buy Now ($14.99)
+        </button>
+</div>
+<!-- Desktop Action Buttons (Floating in sidebar or inline at bottom depending on layout, here inline at bottom of main content for simplicity on web view) -->
+<div class="hidden md:flex justify-end gap-4 max-w-[1200px] mx-auto pb-xl">
+<button class="py-3 px-8 rounded-full border-2 border-primary text-primary font-label-md text-label-md flex items-center justify-center gap-2 bg-surface hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+            Add to Cart
+        </button>
+<button class="py-3 px-8 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center shadow-[0_4px_12px_rgba(255,122,0,0.2)] hover:opacity-90 transition-opacity active:scale-95">
+            Buy Now ($14.99)
+        </button>
+</div>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body></html>

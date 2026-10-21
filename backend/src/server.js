@@ -24,6 +24,21 @@ app.use(cors({
 app.use(morgan('dev'));
 app.use(express.json());
 
+// Root Welcome Route
+app.get('/', (req, res) => {
+  res.json({
+    status: 'online',
+    app: 'BookStop Bookstore API',
+    endpoints: {
+      health: '/api/health',
+      books: '/api/books',
+      categories: '/api/categories',
+      orders: '/api/orders',
+      user: '/api/user/profile'
+    }
+  });
+});
+
 // Health Check
 app.get('/api/health', (req, res) => {
   res.json({

@@ -1,6 +1,6 @@
 import { BOOKS, CATEGORIES_DATA, USER_PROFILE } from '../data/books';
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 
 /**
  * Generic request helper with error handling & graceful mock fallback

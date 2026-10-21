@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { USER_PROFILE, BOOKS } from '../data/books';
+import { userApi, ordersApi } from '../services/api';
 import { Header } from '../components/Header';
 import { BottomNav } from '../components/BottomNav';
 
@@ -9,6 +10,18 @@ export const Profile = () => {
   const navigate = useNavigate();
   const { wishlist, toggleWishlist, addToCart, showNotification } = useCart();
   const [activeModal, setActiveModal] = useState(null); // 'wishlist' | 'orders' | 'edit'
+  const [profile, setProfile] = useState(USER_PROFILE);
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    userApi.getProfile().then((data) => {
+      if (data) setProfile(data);
+    }).catch(() => {});
+
+    ordersApi.getOrders().then((data) => {
+      if (data && Array.isArray(data)) setOrders(data);
+    }).catch(() => {});
+  }, []);
 
   const wishlistedBooks = BOOKS.filter((b) => wishlist.includes(b.id));
 
@@ -26,8 +39,8 @@ export const Profile = () => {
           <div className="relative z-10 w-24 h-24 rounded-full bg-surface-variant p-1 shadow-md mb-4 border-2 border-surface mt-6">
             <img
               className="w-full h-full rounded-full object-cover"
-              src={USER_PROFILE.avatar}
-              alt={USER_PROFILE.name}
+              src={profile.avatar || USER_PROFILE.avatar}
+              alt={profile.name || USER_PROFILE.name}
             />
             <button
               onClick={() => showNotification('Edit profile picture coming soon!')}
@@ -39,17 +52,17 @@ export const Profile = () => {
           </div>
 
           <h2 className="relative z-10 font-headline-md text-xl font-bold text-on-surface mb-0.5">
-            {USER_PROFILE.name}
+            {profile.name || USER_PROFILE.name}
           </h2>
           <p className="relative z-10 font-body-md text-sm text-text-secondary mb-6">
-            {USER_PROFILE.email}
+            {profile.email || USER_PROFILE.email}
           </p>
 
           {/* Stats Bar */}
           <div className="relative z-10 w-full flex justify-around bg-surface-container-low rounded-2xl p-4 border border-outline-variant/30">
             <div className="flex flex-col items-center">
               <span className="font-headline-md text-lg font-bold text-primary">
-                {USER_PROFILE.reviewsCount}
+                {profile.reviewsCount || USER_PROFILE.reviewsCount}
               </span>
               <span className="font-label-sm text-[11px] text-text-secondary uppercase tracking-wider font-semibold">
                 Reviews
@@ -73,7 +86,7 @@ export const Profile = () => {
               className="flex flex-col items-center hover:opacity-80 transition-opacity cursor-pointer"
             >
               <span className="font-headline-md text-lg font-bold text-primary">
-                {USER_PROFILE.ordersCount}
+                {orders.length > 0 ? orders.length : (profile.ordersCount || 0)}
               </span>
               <span className="font-label-sm text-[11px] text-text-secondary uppercase tracking-wider font-semibold">
                 Orders
@@ -287,27 +300,56 @@ export const Profile = () => {
             </div>
 
             <div className="flex-1 overflow-y-auto no-scrollbar py-4 flex flex-col gap-4">
-              <div className="p-4 bg-surface-container-lowest rounded-2xl border border-surface-variant">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-bold text-sm text-primary">#BS-849201</span>
-                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-800">
-                    Delivered
-                  </span>
+              {orders.length === 0 ? (
+                <div className="text-center py-8 text-text-secondary text-sm">
+                  No orders placed yet.
                 </div>
-                <p className="text-xs text-text-secondary mb-2">Ordered on Sept 12, 2026</p>
-                <div className="text-xs font-medium text-text-primary">
-                  The Midnight Library, The Silent Echo
-                </div>
-                <div className="flex justify-between items-center mt-3 pt-2 border-t border-surface-container text-xs">
-                  <span className="text-text-secondary">Total: $33.98</span>
-                  <button
-                    onClick={() => showNotification('Invoice downloaded')}
-                    className="text-primary font-bold hover:underline"
+              ) : (
+                orders.map((order) => (
+                  <div
+                    key={order.id}
+                    className="p-4 bg-surface-container-lowest rounded-2xl border border-surface-variant shadow-sm"
                   >
-                    View Invoice
-                  </button>
-                </div>
-              </div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-bold text-sm text-primary">#{order.id}</span>
+                      <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${
+                        order.status === 'Confirmed'
+                          ? 'bg-blue-100 text-blue-800'
+                          : 'bg-green-100 text-green-800'
+                      }`}>
+                        {order.status || 'Confirmed'}
+                      </span>
+                    </div>
+                    <p className="text-xs text-text-secondary mb-2">
+                      {order.date
+                        ? new Date(order.date).toLocaleDateString('en-US', {
+                            month: 'short',
+                            day: 'numeric',
+                            year: 'numeric'
+                          })
+                        : 'Recent'}
+                    </p>
+                    <div className="text-xs font-medium text-text-primary line-clamp-2">
+                      {order.items && order.items.length > 0
+                        ? order.items
+                            .map((i) => `${i.title || i.bookId} (x${i.quantity || 1})`)
+                            .join(', ')
+                        : 'Bookstore Order'}
+                    </div>
+                    <div className="flex justify-between items-center mt-3 pt-2 border-t border-surface-container text-xs">
+                      <span className="text-text-secondary font-semibold">
+                        Total: ${(order.grandTotal || 0).toFixed(2)}
+                      </span>
+                      <button
+                        onClick={() => showNotification('Invoice downloaded')}
+                        className="text-primary font-bold hover:underline cursor-pointer"
+                      >
+                        View Invoice
+                      </button>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
